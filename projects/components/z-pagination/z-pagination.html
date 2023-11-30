@@ -1,0 +1,13 @@
+<div class="z-pagination"
+     :class="'z-pagination-align-'+align">
+    <a-pagination v-model="zPageNum"
+                  :pageSize.sync="zPageSize"
+                  :pageSizeOptions="pageSizeOptions"
+                  :showQuickJumper="showQuickJumper"
+                  :showSizeChanger="showSizeChanger"
+                  :show-total="showTotalTemplate"
+                  :total="total"
+                  @change="emitChange"
+                  @showSizeChange="emitChange">
+    </a-pagination>
+</div>

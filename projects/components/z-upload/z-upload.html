@@ -1,0 +1,50 @@
+<div class="z-upload">
+    <template v-if="showType==='text'">
+        <a-upload v-if="(overNumShowBtn||(!maxNum||fileList&&fileList.length<maxNum))"
+                  :multiple="multiple"
+                  :accept="acceptType"
+                  :showUploadList="false"
+                  :customRequest="upload">
+            <a-button v-if="!customButton">
+                <a-icon type="upload"/>
+                {{ btnText }}
+            </a-button>
+            <template v-else>
+                <slot></slot>
+            </template>
+        </a-upload>
+        <template v-if="isShowList">
+            <template v-for="file in zFileList">
+                <z-file :key="file.filePath"
+                        :edit="true"
+                        :file="file"
+                        @delete="deleteFile(file.filePath)"></z-file>
+            </template>
+        </template>
+    </template>
+    
+    <div v-else-if="showType==='img'" class="z-upload-img">
+        <template v-if="isShowList">
+            <template v-for="file in fileList">
+                <z-image :key="file.fileName"
+                         :path="file.filePath"
+                         :fileId="file.id"
+                         :fileName="file.originFileName"
+                         @delete="deleteFile(file.filePath)"></z-image>
+            </template>
+        </template>
+        <a-upload v-if="overNumShowBtn||(!maxNum||fileList.length<maxNum)"
+                  :multiple="multiple"
+                  :accept="acceptType"
+                  :showUploadList="false"
+                  :customRequest="upload">
+            <div v-if="!customButton"
+                 class="z-upload-img-btn">
+                <a-icon type="plus"/>
+            </div>
+            <template v-else>
+                <slot></slot>
+            </template>
+        </a-upload>
+    </div>
+</div>

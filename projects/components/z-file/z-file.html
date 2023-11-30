@@ -1,0 +1,24 @@
+<div class="z-file" v-if="(file||name)">
+    <template v-if="file.id&&file.pdfFilePath">
+        <a class="z-file-name"
+           @click="previewPdf()"
+           :title="'点击预览'+(name||file.originFileName)">
+            {{ name || file.originFileName }}</a>
+    </template>
+    <template v-else>
+        <a class="z-file-name"
+           :title="name||file.originFileName">{{ name || file.originFileName }}</a>
+    </template>
+    <a title="下载"
+       style="margin-left: 10px;margin-right: 5px"
+       @click="download()">
+        <a-icon type="upload" class="z-file-upload-icon"/>
+    </a>
+    <span v-if="edit" class="z-file-delete">
+         <span class="z-file-delete-btn"
+               @click.stop="onDelete()"
+               title="删除文件">
+             <a-icon type="delete"/>
+         </span>
+    </span>
+</div>

@@ -1,0 +1,36 @@
+.z-file {
+    height: 32px;
+    cursor: pointer;
+    padding: 0 4px;
+    display: flex;
+    align-items: center;
+    
+    &:hover {
+        background-color: #E6F7FF;
+    }
+    
+    &:hover &-delete-btn {
+        display: inline-block;
+    }
+    
+    &-name {
+        margin: 5px 5px 5px 2px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+    
+    &-upload-icon {
+        color: rgba(0, 0, 0, .65);
+    }
+    
+    &-delete {
+        width: 1em;
+        
+        &-btn {
+            width: 22px;
+            color: rgba(0, 0, 0, .65);
+            display: none;
+        }
+    }
+}

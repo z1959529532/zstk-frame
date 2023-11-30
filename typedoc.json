@@ -1,0 +1,19 @@
+{
+    "entryPoint": "./projects/index.ts",
+    "includes": [
+        "./projects/**/*.ts"
+    ],
+    "tsconfig": "./projects/tsconfig.json",
+    "out": "./dist/zframe-vue-doc/",
+    "hideGenerator": true,
+    "excludeExternals": true,
+    "excludeNotDocumented": true,
+    "excludeNotExported": true,
+    "excludePrivate": true,
+    "excludeProtected": true,
+    "includeVersion": true,
+    "excludeTags": ["author", "since"],
+    "readme": "./README.md",
+    "disableSources": true,
+    "mode": "file"
+}

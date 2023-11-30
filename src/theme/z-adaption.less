@@ -1,0 +1,31 @@
+/**
+ * 浏览器适配样式
+ *
+ * @author ZColin
+ * @since 2020-08-28 18:29
+ */
+
+//基准文字大小12px，对应的rem为1：100；
+@zh-font-base: 16;
+//设计像素
+@design-px: 1920;
+//浏览器最小宽度，低于则出滚动条
+@min-width: 1200px;
+
+//1px-最小宽度使用最小宽度的文字大小
+@media screen and (min-width: 1px) {
+    html {
+        font-size: calc(@zh-font-base * @min-width / @design-px);
+    }
+}
+
+//大于最小宽度，按照浏览器适配
+@media screen and (min-width: @min-width) {
+    html {
+        font-size: calc(@zh-font-base * 100vw / @design-px);
+    }
+}
+
+html {
+    min-width: @min-width;
+}

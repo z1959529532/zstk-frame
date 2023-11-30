@@ -1,0 +1,93 @@
+@import 'z-define';
+
+/**
+ * 通用混入定义
+ *
+ * @author ZColin
+ * @since 2020-08-28 18:37
+ */
+
+//页面（NzLayout） padding
+.zh-mixin-padding(@h:var(--zh-margin-small), @v:var(--zh-margin-big)) {
+    padding: @arguments;
+}
+
+//圆角
+.zh-mixin-border-radius(@radius: var(--zh-border-radius)) {
+    border-radius: @radius;
+}
+
+//背景
+.zh-mixin-bg(@bg:var(--zh-bg)) {
+    background: @bg !important;
+}
+
+//背景，带圆角，边距
+.zh-mixin-bg-radius-padding(@bg:var(--zh-bg),@radius: var(--zh-border-radius), @padding: var(--zh-margin)) {
+    background: @bg !important;
+    .zh-mixin-border-radius(@radius);
+    .zh-mixin-padding(@padding, @padding);
+}
+
+//主颜色圆点
+.zh-mixin-dot(@width:0.5em,@radius:0.25em, @color:var(--zh-primary)) {
+    width: @width;
+    height: @width;
+    border-radius: @radius;
+    background-color: @color;
+    align-self: center;
+    margin-right: var(--zh-margin-small);
+    
+    &:before {
+        content: '';
+        display: inline-block;
+    }
+}
+
+//主颜色矩形
+.zh-mixin-rect(@width:5px, @height:1.2em, @color:var(--zh-primary)) {
+    width: @width;
+    height: @height;
+    background-color: @color;
+    align-self: center;
+    margin-right: 0.5em;
+    
+    &:before {
+        content: '';
+        display: inline-block;
+    }
+}
+
+//文本省略号 N行后省略
+.zh-mixin-text-ellipsis(@n:5) {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: @n !important;
+    text-overflow: ellipsis !important;
+    overflow: hidden !important;
+}
+
+//flex布局的子项 weight:1 等分空间
+.zh-mixin-flex-item-weight(@n:1) {
+    flex-grow: @n !important;
+    flex-basis: 0 !important;
+}
+
+// 用于自定义nz-primary-button背景颜色,效果与ant-primary-button一致;使用时需要nzType='default'
+.zh-button-primary-style(@c) {
+    color: #FFFFFF;
+    border-width: 0;
+    background-color: @c;
+    border-radius: 5px;
+    
+    &:hover {
+        color: #FFFFFF;
+        background-color: lighten(@c, 7%);
+    }
+    
+    &:disabled {
+        background-color: #F5F5F5 !important;
+        border: #D9D9D9 1px solid !important;
+        color: #C2C2C2 !important;
+    }
+}

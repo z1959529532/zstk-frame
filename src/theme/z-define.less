@@ -1,0 +1,122 @@
+/**
+ * 全局css变量定义，需要和下半部分的less变量定义的字段值一致
+ *
+ * @author ZColin
+ * @since 2020-08-28 18:29
+ */
+
+//---------------------------通用颜色----------------------
+@zh-primary: #35D2FD;
+@zh-green: #09DD73;
+@zh-error: #E90000;
+
+//----------------------------背景颜色--------------------------
+@zh-bg: fade(@zh-primary, 5%);
+@zh-bg-10: fade(@zh-primary, 10%);
+@zh-bg-18: fade(@zh-primary, 18%);
+@zh-bg-20: fade(@zh-primary, 20%);
+@zh-bg-30: fade(@zh-primary, 30%);
+@zh-bg-65: fade(@zh-primary, 65%);
+@zh-bg-deep: fade(#000A22, 30%);
+
+@zh-popover-bg-weak: #2C76BA;
+@zh-popover-bg: #2D4687;
+//---------------------------字体颜色-------------------------------
+@zh-text-origin: #FFFFFF;
+@zh-text: fade(@zh-text-origin, 85%);
+@zh-text-weak: fade(@zh-text-origin, 30%);
+
+@zh-primary-text: #00CDFF;
+@zh-primary-text-weak: fdde(#00CDFF, 50%);
+
+//----------------------------边框 线-------------------------------------
+@zh-line: fade(#FFFFFF, 10%);
+@zh-primary-line: fade(@zh-primary-text, 30%);
+
+@zh-border-origin: #0995C6;
+@zh-border: fade(@zh-border-origin, 30%);
+@zh-border-deep: fade(@zh-border-origin, 50%);
+
+//-------------------------------尺寸------------------------------
+@zh-toolbar-height: 54px;
+@zh-copyright-height: 54px;
+
+@zh-margin: 0.2rem;
+@zh-margin-small: 0.16rem;
+@zh-margin-mid: 0.2rem;
+@zh-margin-big: 0.28rem;
+@zh-margin-large: 0.32rem;
+
+@zh-border-radius: 4px;
+@zh-border-radius-big: 8px;
+
+@zh-divider-width: 0.1rem;
+@zh-divider-bold-width: 0.8rem;
+
+//-------------------------------滚动条------------------------------
+@zh-scroll-thumb: rgba(0, 0, 0, 0.3);
+@zh-scroll-thumb-width: 0.05rem;
+
+//-------------------------------modal------------------------------
+@zh-modal-title: @zh-text-origin;
+@zh-modal-bg: linear-gradient(@zh-popover-bg-weak, @zh-popover-bg);
+
+
+/**
+ *  less变量对应的css变量,在项目内使用
+ */
+:root {
+    //---------------------------通用颜色----------------------
+    --zh-primary: @zh-primary;
+    --zh-green: @zh-green;
+    --zh-error: @zh-error;
+    //----------------------------背景颜色--------------------------
+    --zh-bg: @zh-bg;
+    --zh-bg-10: @zh-bg-10;
+    --zh-bg-18: @zh-bg-18;
+    --zh-bg-20: @zh-bg-20;
+    --zh-bg-30: @zh-bg-30;
+    --zh-bg-65: @zh-bg-65;
+    --zh-bg-deep: @zh-bg-deep;
+    
+    --zh-popover-bg-weak: @zh-popover-bg-weak;
+    --zh-popover-bg: @zh-popover-bg;
+    
+    //---------------------------字体颜色-------------------------------
+    --zh-text: @zh-text;
+    --zh-text-origin: @zh-text-origin;
+    --zh-text-weak: @zh-text-weak;
+    --zh-primary-text: @zh-primary-text;
+    --zh-primary-text-weak: @zh-primary-text-weak;
+    
+    //----------------------------边框 线-------------------------------------
+    --zh-line: @zh-line;
+    --zh-primary-line: @zh-primary-line;
+    --zh-border-origin: @zh-border-origin;
+    --zh-border: @zh-border;
+    --zh-border-deep: @zh-border-deep;
+    
+    //-------------------------------尺寸------------------------------
+    --zh-toolbar-height: @zh-toolbar-height;
+    --zh-copyright-height: @zh-copyright-height;
+    
+    --zh-margin: @zh-margin;
+    --zh-margin-small: @zh-margin-small;
+    --zh-margin-mid: @zh-margin-mid;
+    --zh-margin-big: @zh-margin-big;
+    --zh-margin-large: @zh-margin-large;
+    
+    --zh-border-radius: @zh-border-radius;
+    --zh-border-radius-big: @zh-border-radius-big;
+    
+    --zh-divider-width: @zh-divider-width;
+    --zh-divider-bold-width: @zh-divider-bold-width;
+    
+    //-------------------------------滚动条------------------------------
+    --zh-scroll-thumb: @zh-scroll-thumb;
+    --zh-scroll-thumb-width: @zh-scroll-thumb-width;
+    
+    //-------------------------------modal------------------------------
+    --zh-modal-title: @zh-modal-title;
+    --zh-modal-bg: @zh-modal-bg;
+}

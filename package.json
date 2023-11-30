@@ -1,0 +1,74 @@
+{
+    "name": "zframe-vue",
+    "version": "0.0.1",
+    "private": false,
+    "main": "zframe-vue.umd.min.js",
+    "files": [
+        "lib"
+    ],
+    "scripts": {
+        "serve": "cross-env NODE_ENV=development vue-cli-service serve",
+        "build": "cross-env NODE_ENV=production vue-cli-service build",
+        "lint": "vue-cli-service lint",
+        "publish": "npm run package && call scripts/publish.bat && call scripts/post_publish.bat",
+        "package": "rimraf ./dist/lib &&cross-env NODE_ENV=production vue-cli-service build --target lib ./projects/index.ts --dest dist/lib && call ./scripts/post_build_lib.bat",
+        "tslint": "tslint --project tsconfig.app.json --fix",
+        "typedoc": "rimraf ./dist/zframe-vue-doc && typedoc"
+    },
+    "author": {
+        "name": "zhaw",
+        "email": "admin@zhaw.com"
+    },
+    "publishConfig": {
+        "registry": "http://192.168.1.8:8081/repository/npm-release"
+    },
+    "peerDependencies": {
+        "ant-design-vue": "^1.7.4",
+        "vue": "^2.0.0"
+    },
+    "dependencies": {
+        "@vue/babel-preset-jsx": "^1.2.4",
+        "ant-design-vue": "1.7.4",
+        "axios": "0.21.1",
+        "typedoc": "0.17.8",
+        "vue": "2.6.12",
+        "vue-class-component": "7.2.6",
+        "vue-property-decorator": "9.1.2",
+        "vue-router": "3.5.1",
+        "vuex": "3.6.2"
+    },
+    "devDependencies": {
+        "@types/crypto-js": "3.1.47",
+        "@types/lodash": "4.14.168",
+        "@typescript-eslint/eslint-plugin": "2.34.0",
+        "@typescript-eslint/parser": "2.34.0",
+        "@vue/cli-plugin-babel": "4.5.11",
+        "@vue/cli-plugin-eslint": "4.5.11",
+        "@vue/cli-plugin-router": "4.5.11",
+        "@vue/cli-plugin-typescript": "4.5.11",
+        "@vue/cli-plugin-vuex": "4.5.11",
+        "@vue/cli-service": "4.5.11",
+        "@vue/eslint-config-typescript": "5.1.0",
+        "babel-loader": "^8.2.2",
+        "babel-types": "6.26.0",
+        "cache-loader": "4.1.0",
+        "copy-webpack-plugin": "5.1.2",
+        "cross-env": "7.0.3",
+        "crypto-js": "4.0.0",
+        "element-ui": "^2.15.1",
+        "eslint": "6.8.0",
+        "eslint-plugin-vue": "6.2.2",
+        "less": "4.1.1",
+        "less-loader": "5.0.0",
+        "lodash": "4.17.21",
+        "rimraf": "3.0.2",
+        "rxjs": "6.6.6",
+        "ts-loader": "8.0.15",
+        "tslib": "^2.1.0",
+        "typescript": "4.2.3",
+        "uuid": "8.3.2",
+        "vue-loader": "15.9.6",
+        "vue-template-compiler": "2.6.12",
+        "webpack": "4.9.2"
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "extends": "./tsconfig.json",
+    "include": [
+        "src/**/*.ts",
+        "src/**/*.tsx",
+        "src/**/*.vue",
+        "projects/**/*.tsx",
+        "projects/**/*.ts",
+        "projects/**/*.vue"
+    ]
+}

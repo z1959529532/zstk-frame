@@ -1,0 +1,24 @@
+<div class="z-list-container">
+    <template v-if="list.length>0||isNotEmpty()">
+        <slot></slot>
+        <div v-if="total&&pages&&zPageNum&&zPageSize" class="z-list-container-pagination">
+            <z-pagination :page-num.sync="zPageNum"
+                          :page-size.sync="zPageSize"
+                          :total="total"
+                          :pages="pages"
+                          :page-size-options="pageSizeOptions"
+                          :show-quick-jumper="showQuickJumper"
+                          :show-size-changer="showSizeChanger"
+                          @update:page-num="emitChange"
+                          @update:page-size="emitChange"
+                          :show-total="showTotal"
+                          :align="paginationAlign">
+            </z-pagination>
+        </div>
+    </template>
+    <template v-else>
+        <div class="z-list-container-empty">
+            <a-list :data-source="emptyList"/>
+        </div>
+    </template>
+</div>

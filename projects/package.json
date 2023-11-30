@@ -1,0 +1,50 @@
+{
+    "name": "zframe-vue",
+    "version": "0.0.1",
+    "private": false,
+    "main": "zframe-vue.umd.min.js",
+    "author": {
+        "name": "zhaw",
+        "email": "admin@zhaw.com"
+    },
+    "types": "projects/index.d.ts",
+    "publishConfig": {
+        "registry": "http://192.168.1.8:8081/repository/npm-release"
+    },
+    "peerDependencies": {
+        "ant-design-vue": "^1.7.4",
+        "vue": "^2.6.12",
+        "axios": "^0.21.1"
+    },
+    "devDependencies": {
+        "@types/crypto-js": "^3.1.47",
+        "@types/lodash": "^4.14.168",
+        "@typescript-eslint/eslint-plugin": "^2.34.0",
+        "@typescript-eslint/parser": "^2.34.0",
+        "@vue/cli-plugin-babel": "^4.5.11",
+        "@vue/cli-plugin-eslint": "^4.5.11",
+        "@vue/cli-plugin-router": "^4.5.11",
+        "@vue/cli-plugin-typescript": "^4.5.11",
+        "@vue/cli-plugin-vuex": "^4.5.11",
+        "@vue/cli-service": "^4.5.11",
+        "@vue/eslint-config-typescript": "^5.1.0",
+        "ant-design-vue": "^1.7.4",
+        "axios": "^0.21.1",
+        "copy-webpack-plugin": "^5.1.2",
+        "crypto-js": "^4.0.0",
+        "eslint": "^6.8.0",
+        "eslint-plugin-vue": "^6.2.2",
+        "less": "4.1.1",
+        "less-loader": "5.0.0",
+        "lodash": "^4.17.21",
+        "rimraf": "^3.0.2",
+        "rxjs": "^6.6.6",
+        "typescript": "^4.2.3",
+        "vue": "^2.6.12",
+        "vue-class-component": "^7.2.6",
+        "vue-property-decorator": "^9.1.2",
+        "vue-router": "^3.5.1",
+        "vue-template-compiler": "^2.6.12",
+        "vuex": "^3.6.2"
+    }
+}

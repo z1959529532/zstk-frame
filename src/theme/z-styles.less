@@ -1,0 +1,404 @@
+@import 'z-mixin';
+@import 'z-font-styles';
+@import 'z-define';
+@import 'z-space-styles';
+@import 'z-flex-styles';
+
+/**
+ * 全局样式定义
+ *
+ * @author ZColin
+ * @since 2020-08-28 18:37
+ */
+
+/****************************************************common start***********************************************************/
+@media print {
+    .no-print {
+        display: none;
+    }
+}
+
+.zh-cursor-pointer {
+    cursor: pointer;
+}
+
+.zh-full {
+    width: 100%;
+    height: 100%;
+}
+
+.zh-full-width {
+    width: 100%;
+}
+
+.zh-full-height {
+    height: 100%;
+}
+
+//页面（NzLayout） padding
+.zh-layout-padding {
+    padding: var(--zh-margin);
+    height: 100%;
+}
+
+//页面内容区
+.zh-content {
+    max-height: calc(100vh - 200px) !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+}
+
+//标题
+.zh-title {
+    .zh-font-title();
+}
+
+//标题(带蓝色块)
+.zh-title-with-lump {
+    .zh-title();
+    .zh-flex-center-v();
+    
+    &:before {
+        content: '';
+        display: inline-block;
+        .zh-rect();
+    }
+}
+
+//图片充满
+.zh-bg-img-full {
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+//背景 5%
+.zh-bg {
+    .zh-mixin-bg(var(--zh-bg));
+}
+
+//背景
+.zh-bg-10 {
+    .zh-mixin-bg(var(--zh-bg-10));
+}
+
+//背景
+.zh-bg-18 {
+    .zh-mixin-bg(var(--zh-bg-18));
+}
+
+//背景
+.zh-bg-30 {
+    .zh-mixin-bg(var(--zh-bg-30));
+}
+
+//背景
+.zh-bg-65 {
+    .zh-mixin-bg(var(--zh-bg-65));
+}
+
+//背景
+.zh-bg-deep {
+    .zh-mixin-bg(var(--zh-bg-deep));
+}
+
+//圆角
+.zh-radius {
+    .zh-mixin-border-radius(var(--zh-border-radius))
+}
+
+//圆角
+.zh-radius-big {
+    .zh-mixin-border-radius(var(--zh-border-radius-big))
+}
+
+.zh-bg-padding-radius {
+    .zh-bg();
+    .zh-padding();
+    .zh-radius-big();
+}
+
+
+//允许选择、复制
+.zh-user-select {
+    user-select: text;
+}
+
+//文本按原样显示（保留换行格式）
+.zh-text-show-no-format {
+    white-space: pre-wrap !important;
+    word-wrap: break-word !important;
+    word-break: break-all !important;
+}
+
+//超出换行
+.zh-word-break {
+    word-break: break-all;
+}
+
+//文本省略号，单行省略
+.zh-text-ellipsis-1 {
+    white-space: nowrap !important;
+    text-overflow: ellipsis !important;
+    overflow: hidden !important;
+}
+
+//文本省略号 2行后省略
+.zh-text-ellipsis-2 {
+    .zh-mixin-text-ellipsis(2);
+}
+
+//文本省略号 3行后省略
+.zh-text-ellipsis-3 {
+    .zh-mixin-text-ellipsis(3);
+}
+
+//文本省略号 4行后省略
+.zh-text-ellipsis-4 {
+    .zh-mixin-text-ellipsis(4);
+}
+
+//图像居上中截取
+.zh-image-top-crop {
+    height: 100%;
+    background-position: top center;
+    background-size: cover;
+    background-repeat: no-repeat no-repeat;
+}
+
+//图像居中截取
+.zh-image-center-crop {
+    height: 100%;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+//默认分割线
+.zh-divider {
+    background-color: var(--zh-line) !important;
+    height: var(--zh-divider-width) !important;
+}
+
+//默认分割线
+.zh-divider-vertical {
+    background-color: var(--zh-line) !important;
+    width: var(--zh-divider-width) !important;
+}
+
+//默认分割线-粗
+.zh-divider-bold {
+    background-color: var(--zh-line) !important;
+    height: var(--zh-devider-bold-width) !important;
+}
+
+//底部边线
+.zh-bottom-border {
+    border-bottom: var(--zh-divider-width) solid var(--zh-line) !important;
+}
+
+//边线，间隔
+.zh-bottom-dash-border {
+    border-bottom: var(--zh-divider-width) dashed var(--zh-line) !important;
+}
+
+//无外边线
+.zh-no-outline {
+    &:focus {
+        outline-color: transparent !important;
+    }
+}
+
+//主颜色圆点
+.zh-dot {
+    .zh-mixin-dot();
+}
+
+//主颜色矩形
+.zh-rect {
+    .zh-mixin-rect();
+}
+
+//输入框
+.zh-input {
+    width: 200px !important
+}
+
+//多行输入框
+.zh-textarea-one-row-height {
+    min-height: 34px !important;
+}
+
+//下拉框通用
+.zh-select {
+    min-width: 200px !important;
+}
+
+//日期时间段选择
+.zh-date-ranger-picker {
+    min-width: 330px !important;
+}
+
+//过滤条件行
+.zh-filter {
+    display: flex !important;
+    display: -webkit-flex !important;
+    align-items: center !important;
+    margin-top: var(--zh-margin-small);
+    margin-bottom: var(--zh-margin-small);
+}
+
+//过滤条件item-margin
+.zh-filter-item-margin {
+    margin-right: var(--zh-margin-small) !important;
+}
+
+/****************************************************common end***********************************************************/
+
+
+/****************************************************Table start***********************************************************/
+//表格奇数行
+.zh-table-item-1 {
+    line-height: 1.5 !important;
+}
+
+//表格偶数行
+.zh-table-item-2 {
+    line-height: 1.5 !important;
+}
+
+/****************************************************Table end***********************************************************/
+
+
+/****************************************************Form start***********************************************************/
+//表单行居中无上边距（用于表单第一行）
+.zh-form-row-no-top-margin {
+    display: flex !important;
+    display: -webkit-flex !important;
+    align-items: center !important;
+}
+
+//表单行居中
+.zh-form-row {
+    .zh-form-row-no-top-margin;
+    margin-top: var(--zh-margin-mid);
+}
+
+//表单行没有顶部间距（用于表单第一行）居上
+.zh-form-row-no-top-margin-align-top {
+    display: flex !important;
+    display: -webkit-flex !important;
+}
+
+//表单行居上
+.zh-form-row-align-top {
+    .zh-form-row-no-top-margin-align-top;
+    margin-top: var(--zh-margin-mid);
+}
+
+//表单key(文字说明)， 提供基本布局，作为基类
+.zh-form-key,
+.zh-form-text,
+.zh-form-text-require {
+    flex-grow: 1 !important;
+    flex-basis: 0 !important;
+}
+
+//表单值， 提供基本布局，作为基类
+.zh-form-value {
+    flex-grow: 3 !important;
+    flex-basis: 0 !important;
+    
+    input[nz-input],
+    textarea[nz-input],
+    nz-input-number,
+    nz-tree-select,
+    nz-cascader,
+    nz-time-picker,
+    nz-date-picker,
+    nz-month-picker,
+    nz-range-picker,
+    nz-week-picker,
+    nz-year-picker,
+    nz-input-group,
+    nz-select {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+//表单文字说明（非必填和必填）
+.zh-form-text,
+.zh-form-text-require {
+    text-align: end !important;
+    padding-right: 5px !important;
+}
+
+//表单输入框
+.zh-form-input {
+    flex-grow: 3 !important;
+    flex-basis: 0 !important;
+    margin-left: 8px !important;
+}
+
+//表单选择框
+.zh-form-select,
+.zh-form-description,
+.zh-form-tree,
+.zh-date-picker {
+    flex-grow: 3 !important;
+    flex-basis: 0 !important;
+}
+
+//表单不可编辑的文字说明
+.zh-form-tag {
+    .zh-form-value();
+    padding: 4px 11px !important;
+    margin: 0 !important;
+    margin-left: 6.5px !important;
+    height: 32px !important;
+    font-size: 14px !important;
+    opacity: 5% !important;
+}
+
+//多列文本key
+.zh-form-multi-col-key {
+    width: 100px !important;
+    text-align: end !important;
+}
+
+//多列文本value
+.zh-form-multi-col-value {
+    width: 300px !important;
+}
+
+// 加冒号
+.zh-gray-text-has-colon,
+.zh-text-key,
+.zh-text-key-require,
+.zh-form-text,
+.zh-form-text-require {
+    &:after {
+        content: ':';
+        padding-right: 5px;
+        padding-left: 2px;
+        display: inline-block;
+    }
+}
+
+.zh-text-key {
+    padding-left: 0.6em;
+}
+
+// 必填项文字说明前加‘*’
+.zh-form-text-require,
+.zh-text-key-require {
+    &:before {
+        content: '*';
+        color: var(--zh-error);
+        display: inline-block;
+        margin-right: 3px;
+        font-size: 1em;
+    }
+}
+
+/****************************************************Form end***********************************************************/

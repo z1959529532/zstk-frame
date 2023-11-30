@@ -1,0 +1,30 @@
+<div class="z-image"
+     :style="styles">
+    <img :src="imageSrc" alt v-error-img :style="styles">
+    <div v-if="showPreview||showDelete"
+         :style="styles"
+         class="z-image-mask">
+        <div class="z-image-mask-operation">
+            <template v-if="showPreview">
+                <a-button
+                        type="link"
+                        icon="eye"
+                        title="预览"
+                        @click="previewClick">
+                </a-button>
+            
+            </template>
+            
+            <a-button v-if="showDelete"
+                      type="link"
+                      icon="delete"
+                      title="删除"
+                      @click="deleteClick">
+            </a-button>
+        </div>
+    </div>
+    <z-image-modal v-if="showPreview"
+                   v-model="modalVisible"
+                   :image-url="imageSrc">
+    </z-image-modal>
+</div>

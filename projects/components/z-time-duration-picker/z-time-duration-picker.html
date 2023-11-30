@@ -1,0 +1,9 @@
+<div class="z-time-duration-picker">
+    <a-cascader v-model="curOption"
+                :options="options"
+                :placeholder="placeHolder"
+                expand-trigger="hover"
+                :display-render="displayRender"
+                @change="onChange"/>
+    <div style="color: #09DD73">{{ value }}</div>
+</div>
